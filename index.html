@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Gabriel Alves</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">&lt;Gabriel Alves /&gt;</div>
+                <div class="nav-links">
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio">
+        <div class="container">
+            <div class="hero-wrapper hidden">
+                
+                <div class="hero-content">
+                    <h1>Olá, eu sou o Gabriel.</h1>
+                    <p class="subtitle">Desenvolvedor Backend Júnior</p>
+                    <p class="hero-text">
+                        Técnico em Desenvolvimento de Sistemas em formação pelo SENAI, com sólida base em lógica de programação, Java e boas práticas de desenvolvimento. Apaixonado por tecnologia, automação e resolução de problemas.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="btn">Ver Projetos</a>
+                        <a href="images/curriculo.pdf" target="_blank" class="btn btn-outline" title="Baixar Currículo em PDF">
+                            Currículo
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <a href="https://github.com/GabrielAlves20" target="_blank" class="github-link">Acessar meu GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="images/imagemPerfil.png" alt="Foto de Perfil do Gabriel">
+                </div>
+            </div>
+            
+            <a href="#sobre" class="scroll-down">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container centered-section hidden">
+            <h2>Quem sou eu</h2>
+            <div class="bio-text">
+                <p>Tenho 22 anos e sou Técnico em Desenvolvimento de Sistemas formado pelo SENAI, com base sólida em lógica de programação, princípios SOLID, desenvolvimento de APIs REST e bancos de dados.</p>
+                <br>
+                <p>Possuo experiência no Grupo Boticário com uso de sistemas corporativos como SAP e Wamas, atuando na organização de bases de dados para geração de dashboards e apoio à tomada de decisão. Atuei na automatização de rotinas e organização de processos.</p>
+                <br>
+                <p>Complemento minha formação com conhecimentos em Java, AWS, HTML, CSS e Power BI, buscando oportunidades na área de tecnologia para atuar com desenvolvimento de sistemas e análise de dados.</p>
+            </div>
+            
+            <h3 class="stack-title">Minha Tech Stack</h3>
+            <div class="stack-tags">
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>PostgreSQL</span>
+                <span>Git</span>
+                <span>Docker</span>
+            </div>
+        </div>
+
+        <a href="#projetos" class="scroll-down">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <section id="projetos">
+        <div class="container">
+            <h2 style="text-align: center;" class="hidden">Projetos Selecionados</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card hidden">
+                    <h3>E-rank</h3>
+                    <p class="tech-stack">JAVA • SPRING BOOT • MYSQL</p>
+                    <p class="project-desc">
+                        Erank é uma aplicação web desenvolvida com Spring Boot, criada para conectar jogadores de First Person Shooter (FPS) em uma plataforma social e competitiva.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/ofback/E-rank" target="_blank">📁 Código (GitHub)</a>
+                    </div>
+                </div>
+
+                <div class="project-card hidden" style="transition-delay: 200ms;">
+                    <h3>TesteApi</h3>
+                    <p class="tech-stack">PYTHON • SELENIUM</p>
+                    <p class="project-desc">
+                        Atividade realizada no curso técnico Senai para teste automatizado de API utilizando Python + Selenium.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/ofback/testeSeleniumCrudPython" target="_blank">📁 Código (GitHub)</a>
+                    </div>
+                </div>
+
+                <div class="project-card hidden" style="transition-delay: 400ms;">
+                    <h3>Meu primeiro Live code</h3>
+                    <p class="tech-stack">NODE.JS • EXPRESS • MONGODB</p>
+                    <p class="project-desc">
+                        Este live code teve como objetivo avaliar validações e testes automatizados, simulando um cenário próximo ao mundo real e reforçando conceitos de qualidade de código.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/GabrielAlves20/LiveCode" target="_blank">📁 Código (GitHub)</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="#contato" class="scroll-down">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <section id="contato">
+        <div class="container centered-section hidden">
+            <h2>Vamos conversar?</h2>
+            <p class="contact-desc">
+                Estou disponível para novas oportunidades como Júnior.
+            </p>
+            <ul class="contact-list">
+                <li>📧 <a href="mailto:Gabriel12425@gmail.com">Gabriel12425@gmail.com</a></li>
+                <li>💼 <a href="https://www.linkedin.com/in/gabriel-alves-852264233/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li>🐙 <a href="https://github.com/GabrielAlves20" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Gabriel Alves. Construído com HTML/CSS puro.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
