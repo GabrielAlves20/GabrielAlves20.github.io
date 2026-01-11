@@ -213,17 +213,78 @@ footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font
 
 
 /* --- RESPONSIVIDADE --- */
+/* =========================================
+   RESPONSIVIDADE (CELULAR E TABLET)
+   ========================================= */
 @media (max-width: 900px) {
+    
+    /* 1. CORREÇÃO DO CABEÇALHO (O PULO DO GATO) */
+    header {
+        position: relative; /* Deixa de ser fixo e passa a empurrar o conteúdo */
+        padding: 20px 0;
+        backdrop-filter: none; /* Remove efeito de vidro para evitar bugs visuais no mobile */
+    }
+
+    /* 2. MENU VERTICAL E ALINHADO */
+    nav {
+        flex-direction: column; /* Coloca Logo em cima, Links embaixo */
+        gap: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Links um embaixo do outro */
+        width: 100%; /* Ocupa a largura toda */
+        text-align: center;
+        gap: 10px; /* Espaço entre os botões */
+    }
+
+    /* Transforma os links em "botões" fáceis de tocar */
+    .nav-links a {
+        margin: 0; /* Remove a margem lateral do desktop */
+        display: block;
+        padding: 12px;
+        background-color: var(--card-bg); /* Fundo leve para parecer botão */
+        border-radius: 8px;
+        font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+        background-color: var(--accent);
+        color: var(--bg-color);
+    }
+    
+    /* Remove a linha animada no mobile, pois virou botão */
+    .nav-links a::after { display: none; }
+
+
+    /* 3. HERO (INÍCIO) */
+    /* Removemos o padding gigante do desktop porque o header não é mais fixo */
+    section { 
+        padding: 50px 0; 
+        min-height: auto; /* Altura automática para não cortar conteúdo */
+    }
+
     .hero-wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; /* Foto em cima, Texto embaixo */
         text-align: center;
         gap: 30px;
+        margin-top: 0; /* Remove espaço extra desnecessário */
     }
-    .hero h1 { font-size: 2.5rem; }
-    .hero-buttons { justify-content: center; }
-    .hero-image img { width: 220px; height: 220px; }
+
+    .hero h1 { font-size: 2.2rem; }
     
-    section { padding: 80px 0; min-height: auto; /* No mobile, tira a altura fixa para não cortar conteúdo */ }
+    .hero-buttons { 
+        justify-content: center; 
+        width: 100%;
+    }
     
-    .scroll-down { display: none; /* Esconde a seta em telas muito pequenas se atrapalhar */ }
+    .hero-image img { 
+        width: 200px; 
+        height: 200px; /* Foto menor no celular */
+    }
+
+    /* 4. AJUSTES GERAIS */
+    .container { padding: 0 20px; }
+    .scroll-down { display: none; /* Esconde a setinha no mobile pois atrapalha */ }
 }
