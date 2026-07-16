@@ -6,6 +6,14 @@
     <title>Portfólio Gabriel Alves</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <script>
+        // Define o tema antes da primeira renderização, evitando "flash" de cor errada
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
 
@@ -13,11 +21,37 @@
         <div class="container">
             <nav>
                 <div class="logo">&lt;Gabriel Alves /&gt;</div>
-                <div class="nav-links">
+
+                <div class="nav-controls">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Alternar entre tema claro e escuro" title="Alternar tema">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                <div class="nav-links" id="navLinks">
                     <a href="#inicio">Início</a>
                     <a href="#sobre">Sobre</a>
                     <a href="#projetos">Projetos</a>
-                    <a href="#contato">Contato</a>
+                    <a href="#contato and tech-stack">Contato</a>
                 </div>
             </nav>
         </div>
@@ -29,25 +63,25 @@
                 
                 <div class="hero-content">
                     <h1>Olá, eu sou o Gabriel.</h1>
-                    <p class="subtitle">Desenvolvedor Backend Júnior</p>
+                    <p class="subtitle">Analista de dados</p>
                     <p class="hero-text">
-                        Técnico em Desenvolvimento de Sistemas em formação pelo SENAI, com sólida base em lógica de programação, Java e boas práticas de desenvolvimento. Apaixonado por tecnologia, automação e resolução de problemas.
+                       Estudante de Bacharelado em Administração, Técnico em Desenvolvimento de Sistemas e Especialista Técnico em Desenvolvimento de Aplicações para Inteligência Artificial. Possuo experiência em rotinas administrativas e operacionais, incluindo gestão de estoques, controle de inventário, conferência de dados, utilização do SAP, elaboração de planilhas em Excel e apoio à geração de indicadores por meio da alimentação de bases de dados. Perfil analítico, organizado e orientado à melhoria contínua de processos, com interesse em atuar nas áreas Administrativa, Análise de Dados, Business Intelligence e Planejamento.
                     </p>
                     
                     <div class="hero-buttons">
                         <a href="#projetos" class="btn">Ver Projetos</a>
-                        <a href="images/curriculo.pdf" target="_blank" class="btn btn-outline" title="Baixar Currículo em PDF">
+                        <a href="images/CurriculoGabrielAlves.pdf" target="_blank" class="btn btn-outline" title="Baixar Currículo em PDF">
                             Currículo
                         </a>
                     </div>
                     
-                    <div style="margin-top: 20px;">
+                    <div style="margin-top: px;">
                         <a href="https://github.com/GabrielAlves20" target="_blank" class="github-link">Acessar meu GitHub &rarr;</a>
                     </div>
                 </div>
 
                 <div class="hero-image">
-                    <img src="images/imagemPerfil.png" alt="Foto de Perfil do Gabriel">
+                    <img src="images/fotodeperfil.png" alt="Foto de Perfil do Gabriel">
                 </div>
             </div>
             
@@ -63,23 +97,10 @@
         <div class="container centered-section hidden">
             <h2>Quem sou eu</h2>
             <div class="bio-text">
-                <p>Tenho 22 anos e sou Técnico em Desenvolvimento de Sistemas formado pelo SENAI, com base sólida em lógica de programação, princípios SOLID, desenvolvimento de APIs REST e bancos de dados.</p>
-                <br>
-                <p>Possuo experiência no Grupo Boticário com uso de sistemas corporativos como SAP e Wamas, atuando na organização de bases de dados para geração de dashboards e apoio à tomada de decisão. Atuei na automatização de rotinas e organização de processos.</p>
-                <br>
-                <p>Complemento minha formação com conhecimentos em Java, AWS, HTML, CSS e Power BI, buscando oportunidades na área de tecnologia para atuar com desenvolvimento de sistemas e análise de dados.</p>
-            </div>
+                <p>Tenho 23 anos e sou estudante de Bacharelado em Administração pela UEFS, Técnico em Desenvolvimento de Sistemas e Especialista Técnico em Desenvolvimento de Aplicações para Inteligência Artificial pelo SENAI. Possuo experiência em ambientes corporativos, atuando com organização e tratamento de bases de dados, elaboração de indicadores, uso de sistemas ERP (SAP), Excel avançado e suporte à tomada de decisão. 
+                    Minha formação une tecnologia, análise de dados e gestão de processos, com conhecimentos em Python, Java, SQL, Power BI, AWS, desenvolvimento de APIs REST e bancos de dados. Tenho perfil analítico, organizado e orientado à melhoria contínua, buscando oportunidades nas áreas de Análise de Dados, Business Intelligence, Engenharia de Dados ou Desenvolvimento de Software, onde possa transformar dados em soluções que gerem valor para o negócio.</p>
+                </div>
             
-            <h3 class="stack-title">Minha Tech Stack</h3>
-            <div class="stack-tags">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>Python</span>
-                <span>SQL</span>
-                <span>PostgreSQL</span>
-                <span>Git</span>
-                <span>Github</span>
-            </div>
         </div>
 
         <a href="#projetos" class="scroll-down">
@@ -91,69 +112,115 @@
 
     <section id="projetos">
         <div class="container">
-            <h2 style="text-align: center;" class="hidden">Projetos Selecionados</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card hidden">
-                    <h3>E-rank</h3>
-                    <p class="tech-stack">JAVA • SPRING BOOT • MYSQL</p>
+            <h2 style="text-align: center;" class="hidden">Projetos</h2>
+            <div class="projects-carousel-container">
+                <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+                <div class="projects-grid" id="projectsGrid">
+                    
+                    <div class="project-card">
+                        <h3>E-rank</h3>
+                        <p class="tech-stack">JAVA • SPRING BOOT • MYSQL</p>
+                        <p class="project-desc">
+                            Erank é uma aplicação web desenvolvida com Spring Boot, criada para conectar jogadores de First Person Shooter (FPS) em uma plataforma social e competitiva.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/ofback/E-rank" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+
+                    
+
+                <div class="project-card">
+                    <h3>FilmApp</h3>
+                    <p class="tech-stack">N8N • PYTHON • API • GROQ</p>
                     <p class="project-desc">
-                        Erank é uma aplicação web desenvolvida com Spring Boot, criada para conectar jogadores de First Person Shooter (FPS) em uma plataforma social e competitiva.
+                        Sistema de recomendação de filmes feito para o projeto final da matéria "Programação Aplicada em Python" utilizando n8n
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/ofback/E-rank" target="_blank">📁 Código (GitHub)</a>
+                        <a href="https://github.com/GabrielAlves20/Film_app.git" target="_blank">GitHub</a>
                     </div>
                 </div>
 
-                <div class="project-card hidden" style="transition-delay: 200ms;">
+                <div class="project-card" >
+                    <h3>EDA dataset ufc </h3>
+                    <p class="tech-stack">PYTHON • PANDAS • SEABORN</p>
+                    <p class="project-desc">
+                        Analise exploratória de dados utilizando Python e Pandas, com o objetivo de extrair insights e padrões a partir de um conjunto de dados do dataset ultimate ufc, para posteriormente implementar soluções de machine learning.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/GabrielAlves20/AnalisesDeDados/blob/main/EDA_ufc.ipynb" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" >
                     <h3>TesteApi</h3>
                     <p class="tech-stack">PYTHON • SELENIUM</p>
                     <p class="project-desc">
                         Atividade realizada no curso técnico Senai para teste automatizado de API utilizando Python + Selenium.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/ofback/testeSeleniumCrudPython" target="_blank">📁 Código (GitHub)</a>
+                        <a href="https://github.com/ofback/testeSeleniumCrudPython" target="_blank">GitHub</a>
                     </div>
                 </div>
 
-                <div class="project-card hidden" style="transition-delay: 400ms;">
-                    <h3>Meu primeiro Live code</h3>
+                <div class="project-card" >
+                    <h3>Live code</h3>
                     <p class="tech-stack">Java• SpringBoot • Junit5</p>
                     <p class="project-desc">
                         Este live code teve como objetivo avaliar validações e testes automatizados, simulando um cenário próximo ao mundo real e reforçando conceitos de qualidade de código.
                     </p>
                     <div class="project-links">
-                        <a href="https://github.com/GabrielAlves20/LiveCode" target="_blank">📁 Código (GitHub)</a>
+                        <a href="https://github.com/GabrielAlves20/LiveCode" target="_blank">GitHub</a>
                     </div>
                 </div>
 
+    
+
+                </div>
+                <button class="carousel-btn next" aria-label="Próximo">›</button>
             </div>
         </div>
 
-        <a href="#contato" class="scroll-down">
+        <a href="#contato and tech-stack" class="scroll-down">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
             </svg>
         </a>
     </section>
-
-    <section id="contato">
+    
+    <section id="contato and tech-stack">
+            <div class="container centered-section hidden">
+            <h2 class="stack-title">Minha Tech Stack</h2>
+            <div class="stack-tags">
+                <span>PYTHON</span>
+                <span>PANDAS</span>
+                <span>JAVA</span>
+                <span>SPRING BOOT</span>
+                <span>SQL</span>
+                <span>POSTGREESQL</span>
+                <span>GIT</span>
+                <span>N8N</span>
+                <span>POWER BI</span>
+                <span>EXCEL</span>
+                <span>PYTHON</span>
+            </div>
+        </div>
+     
         <div class="container centered-section hidden">
             <h2>Vamos conversar?</h2>
             <p class="contact-desc">
-                Estou disponível para novas oportunidades como Júnior.
+                Estou disponível para novas oportunidades.
             </p>
             <ul class="contact-list">
-                <li>📧 <a href="mailto:Gabriel12425@gmail.com">Gabriel12425@gmail.com</a></li>
-                <li>💼 <a href="https://www.linkedin.com/in/gabriel-alves-852264233/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li>🐙 <a href="https://github.com/GabrielAlves20" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:Gabriel12425@gmail.com">Gabriel12425@gmail.com</a></li>
+                <li><a href="https://www.linkedin.com/in/gabriel-alves-852264233/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/GabrielAlves20" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
         </div>
     </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2026 Gabriel Alves. Construído com HTML/CSS puro.</p>
+            <p>&copy; 2026 Gabriel Alves.</p>
         </div>
     </footer>
 
@@ -168,6 +235,46 @@
 
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((el) => observer.observe(el));
+
+        // --- Alternância de tema claro/escuro ---
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // --- Menu hambúrguer (mobile) ---
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Fecha o menu ao clicar em um link (facilita a navegação no celular)
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        const projectsGrid = document.getElementById('projectsGrid');
+        const prevButton = document.querySelector('.carousel-btn.prev');
+        const nextButton = document.querySelector('.carousel-btn.next');
+
+        if (projectsGrid && prevButton && nextButton) {
+            const scrollAmount = projectsGrid.offsetWidth * 0.8;
+            prevButton.addEventListener('click', () => {
+                projectsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            nextButton.addEventListener('click', () => {
+                projectsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        }
     </script>
 
 </body>
