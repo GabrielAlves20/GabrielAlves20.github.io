@@ -48,9 +48,9 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-main);
-    font-size: 1.32rem;
+    font-size: 1.05rem; /* Reduzido de 1.32rem */
     line-height: 1.85;
-    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+    overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -58,22 +58,22 @@ a { text-decoration: none; color: var(--accent); transition: 0.3s; }
 a:hover { color: var(--accent-hover); }
 
 .container {
-    max-width: 1350px;
+    max-width: 1200px; /* Reduzido levemente para acompanhar as fontes menores */
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
     min-width: 0;
 }
 
-/* --- HEADER FIXO (Para acompanhar o scroll se quiser, ou normal) --- */
+/* --- HEADER FIXO --- */
 header { 
-    padding: 20px 0; 
+    padding: 15px 0; /* Reduzido de 20px */
     border-bottom: 1px solid var(--border-color-soft); 
-    position: fixed; /* Header fica fixo no topo */
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: var(--header-bg); /* Fundo levemente transparente */
+    background-color: var(--header-bg);
     backdrop-filter: blur(5px);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -88,12 +88,11 @@ nav {
 
 .logo { 
     font-weight: bold; 
-    font-size: 1.45rem; 
+    font-size: 1.25rem; /* Reduzido de 1.45rem */
     color: var(--text-primary);
     order: 1;
 }
 
-/* --- Lado direito do header: toggle de tema + botão hambúrguer --- */
 .nav-controls {
     display: flex;
     align-items: center;
@@ -107,8 +106,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px; /* Reduzido de 40px */
+    height: 36px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
@@ -118,7 +117,7 @@ nav {
     flex-shrink: 0;
 }
 .theme-toggle:hover { border-color: var(--accent); transform: translateY(-2px); }
-.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle svg { width: 18px; height: 18px; }
 .theme-toggle .icon-moon { display: none; }
 [data-theme="light"] .theme-toggle .icon-sun { display: none; }
 [data-theme="light"] .theme-toggle .icon-moon { display: block; }
@@ -129,8 +128,8 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
@@ -139,7 +138,7 @@ nav {
 }
 .menu-toggle span {
     display: block;
-    width: 20px;
+    width: 18px;
     height: 2px;
     background: var(--text-primary);
     border-radius: 2px;
@@ -157,8 +156,8 @@ nav {
 }
 
 .nav-links a {
-    margin-left: 30px;
-    font-size: 1rem;
+    margin-left: 25px;
+    font-size: 0.95rem; /* Reduzido de 1rem */
     color: var(--text-primary);
     position: relative;
     padding-bottom: 5px;
@@ -177,62 +176,60 @@ nav {
 .nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { color: var(--accent); }
 
-
-/* --- SEÇÕES (Full Screen) --- */
+/* --- SEÇÕES --- */
 section { 
     position: relative;
     min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 120px 0 80px;
-    scroll-margin-top: 120px; /* Ajuste para o header fixo */
+    padding: 100px 0 60px; /* Reduzido de 120px 0 80px */
+    scroll-margin-top: 100px; 
 }
 
-/* Remove a borda do contato */
 #contato { border-bottom: none; }
 
-h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--text-primary); text-align: center; }
-.centered-section { text-align: center; max-width: 1200px; }
-
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 30px; color: var(--text-primary); text-align: center; }
+.centered-section { text-align: center; max-width: 1000px; margin: 0 auto; }
 
 /* --- HERO --- */
 .hero-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 40px;
 }
 
 .hero-content { flex: 1; }
-.hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 15px; color: var(--text-primary); }
-.hero-content .subtitle { font-size: 1.65rem; color: var(--accent); margin-bottom: 20px; font-weight: 600; }
+.hero-content h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.15; margin-bottom: 12px; color: var(--text-primary); }
+.hero-content .subtitle { font-size: 1.35rem; color: var(--accent); margin-bottom: 15px; font-weight: 600; }
 .hero-content .hero-text {
     font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
-    max-width: 700px;
+    margin-bottom: 25px;
+    max-width: 650px;
     text-align: justify;
 }
 
-.hero-image { flex: 0 0 320px; display: flex; justify-content: center; }
+.hero-image { flex: 0 0 280px; display: flex; justify-content: center; }
 .hero-image img {
-    width: 300px; height: 300px;
+    width: 250px; /* Reduzido de 300px */
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--accent);
     box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
 }
 
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
     display: inline-block;
     background: var(--accent);
     color: var(--bg-color);
-    padding: 12px 30px;
+    padding: 10px 24px; /* Reduzido */
     border-radius: 6px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Reduzido */
     transition: transform 0.2s;
 }
 .btn:hover { transform: translateY(-3px); background: #fff; }
@@ -249,22 +246,21 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     transform: translateY(-3px);
 }
 
-.github-link-wrapper { margin-top: 20px; }
-.github-link { font-weight: bold; display: inline-block; }
-
+.github-link-wrapper { margin-top: 15px; }
+.github-link { font-weight: bold; font-size: 0.95rem; display: inline-block; }
 
 /* --- SCROLL DOWN ARROW --- */
 .scroll-down {
     position: sticky;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     margin: 0 auto;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.18);
@@ -281,10 +277,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     opacity: 1;
 }
 
-.scroll-down svg {
-    width: 20px;
-    height: 20px;
-}
+.scroll-down svg { width: 18px; height: 18px; }
 
 [data-theme="light"] .scroll-down {
     background: rgba(255, 255, 255, 0.92);
@@ -292,66 +285,54 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     color: var(--text-primary);
 }
 
-[data-theme="light"] .scroll-down:hover {
-    background: rgba(2, 132, 199, 0.16);
-}
+[data-theme="light"] .scroll-down:hover { background: rgba(2, 132, 199, 0.16); }
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-    40% { transform: translate(-50%, -10px); }
-    60% { transform: translate(-50%, -5px); }
+    40% { transform: translate(-50%, -8px); }
+    60% { transform: translate(-50%, -4px); }
 }
 
-
-/* --- ANIMAÇÕES DE ENTRADA (Scroll Reveal) --- */
+/* --- ANIMAÇÕES --- */
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(50px); /* Começa 50px abaixo */
-    transition: all 1s ease; /* Demora 1s para aparecer */
+    transform: translateY(40px); 
+    transition: all 1s ease; 
 }
-
 .show {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0); /* Volta para o lugar original */
+    transform: translateY(0);
 }
-
 
 /* --- TAGS & BIO --- */
 .bio-text p {
     margin-bottom: 15px;
     color: var(--text-secondary);
     font-size: 1rem;
-    line-height: 1.85;
+    line-height: 1.8;
     text-align: justify;
 }
 .stack-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-top: 25px;
-    margin-bottom: 40px;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 .stack-tags span {
     background: var(--accent-soft);
-    padding: 8px;
+    padding: 6px 12px;
     border-radius: 20px;
     border: 1px solid var(--accent);
-    font-size: 1rem;
+    font-size: 0.85rem; /* Reduzido */
     color: var(--accent);
-    flex: 0 1 120px;
+    flex: 0 1 auto;
     text-align: center;
 }
-
-.stack-title {
-    margin-bottom: 18px;
-}
-
-.contact-list {
-    margin-top: 20px;
-}
+.stack-title { margin-bottom: 15px; font-size: 1.2rem; }
 
 /* --- PROJETOS CAROUSEL --- */
 .projects-carousel-container {
@@ -364,8 +345,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 }
 
 .carousel-btn {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
     background: var(--card-bg);
@@ -378,16 +359,12 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     transition: transform 0.2s, background-color 0.3s;
     flex-shrink: 0;
 }
-
-.carousel-btn:hover {
-    transform: scale(1.05);
-    background: var(--accent-soft);
-}
+.carousel-btn:hover { transform: scale(1.05); background: var(--accent-soft); }
 
 .projects-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 30px;
+    gap: 20px;
     flex: 1 1 auto;
     min-width: 0;
     overflow-x: auto;
@@ -395,89 +372,16 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
     margin: 0;
 }
-
-.projects-grid::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
-}
-
-@media (max-width: 900px) {
-    .hero-content,
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 700px) {
-    .carousel-btn { display: none; }
-
-    .project-card {
-        flex: 0 0 90%;
-    }
-}
-
-@media (min-width: 1200px) {
-    body {
-        font-size: 1.32rem;
-    }
-
-    .logo {
-        font-size: 1.75rem;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-    }
-
-    .hero-content h1 {
-        font-size: 4.7rem;
-    }
-
-    .hero-content .subtitle {
-        font-size: 1.95rem;
-    }
-
-    .hero-content .hero-text {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 3.6rem;
-    }
-
-    .bio-text p {
-        font-size: 1.75rem;
-    }
-
-    .stack-tags span {
-        font-size: 1.12rem;
-    }
-
-    .project-card h3 {
-        font-size: 1.75rem;
-    }
-
-    .project-card p,
-    .project-card .project-desc,
-    .project-card .tech-stack,
-    .project-card .project-links a {
-        font-size: 1.1rem;
-    }
-
-    .btn {
-        font-size: 1.15rem;
-        padding: 14px 34px;
-    }
-}
+.projects-grid::-webkit-scrollbar { display: none; }
 
 .project-card {
-    flex: 0 0 calc((100% - 60px) / 3);
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 280px;
     background: var(--card-bg);
-    padding: 30px;
+    padding: 24px; /* Reduzido de 30px */
     border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
@@ -487,78 +391,78 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     flex-direction: column;
     justify-content: space-between;
 }
-.project-card:hover {
-    border-color: var(--accent);
-}
+.project-card:hover { border-color: var(--accent); }
 .project-card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--text-primary);
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.4rem);
     text-align: left;
 }
 .project-card p,
 .project-card .project-desc,
 .project-card .tech-stack,
 .project-card .project-links a {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.95rem; /* Reduzido */
+    line-height: 1.6;
 }
 .project-links {
     display: flex;
     align-items: center;
-    min-height: 3rem;
+    min-height: 2.5rem;
     margin-top: auto;
 }
-.project-links a {
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-}
+.project-links a { display: inline-flex; align-items: center; width: 100%; font-size: 0.9rem; }
 .tech-stack {
     color: var(--accent);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-family: monospace;
     letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 .project-desc {
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
-
 
 /* --- CONTATO & FOOTER --- */
 .contact-list {
     list-style: none;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
 }
-.contact-list li {
-    margin-bottom: 0;
-    font-size: 1.4rem;
-}
-footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font-size: 1rem; }
+.contact-list li { margin-bottom: 0; font-size: 1.1rem; } /* Reduzido de 1.4rem */
+footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font-size: 0.9rem; }
 
-
-/* --- RESPONSIVIDADE --- */
 /* =========================================
-   RESPONSIVIDADE (CELULAR E TABLET)
+   RESPONSIVIDADE 
    ========================================= */
+
+@media (min-width: 1200px) {
+    body { font-size: 1.1rem; } /* Antes estava gigante aqui (1.32rem) */
+    .logo { font-size: 1.4rem; }
+    .nav-links a { font-size: 1.05rem; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .hero-content .subtitle { font-size: 1.4rem; }
+    .hero-content .hero-text { font-size: 1.05rem; }
+    h2 { font-size: 2.8rem; }
+    .bio-text p { font-size: 1.1rem; }
+    .stack-tags span { font-size: 0.9rem; }
+    .project-card h3 { font-size: 1.4rem; }
+    .project-card p, .project-card .project-desc, .project-card .tech-stack, .project-card .project-links a { font-size: 0.95rem; }
+    .btn { font-size: 1rem; padding: 12px 28px; }
+}
+
 @media (max-width: 900px) {
-
-    /* 1. HEADER continua fixo, mas mais compacto */
-    header {
-        padding: 14px 0;
-    }
-
-    /* 2. MENU HAMBÚRGUER */
-    .menu-toggle { display: flex; } /* mostra o botão hambúrguer */
-
+    .hero-content, .hero-text { width: 100%; max-width: 100%; }
+    header { padding: 12px 0; }
+    .menu-toggle { display: flex; }
+    
     .nav-links {
         position: fixed;
-        top: 68px; /* logo abaixo do header */
+        top: 60px;
         left: 0;
         right: 0;
         flex-direction: column;
@@ -572,95 +476,40 @@ footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font
         opacity: 0;
         transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
     }
-
-    .nav-links.active {
-        max-height: 400px;
-        opacity: 1;
-        box-shadow: 0 15px 25px -10px rgba(0,0,0,0.3);
-    }
-
-    /* Transforma os links em "botões" fáceis de tocar */
-    .nav-links a {
-        margin: 0; /* Remove a margem lateral do desktop */
-        display: block;
-        padding: 14px;
-        background-color: var(--card-bg); /* Fundo leve para parecer botão */
-        border-radius: 8px;
-        font-weight: 500;
-        text-align: center;
-    }
-
-    .nav-links a:hover {
-        background-color: var(--accent);
-        color: var(--bg-color);
-    }
-
-    /* Remove a linha animada no mobile, pois virou botão */
+    
+    .nav-links.active { max-height: 400px; opacity: 1; box-shadow: 0 15px 25px -10px rgba(0,0,0,0.3); }
+    .nav-links a { margin: 0; display: block; padding: 12px; background-color: var(--card-bg); border-radius: 8px; font-weight: 500; text-align: center; }
+    .nav-links a:hover { background-color: var(--accent); color: var(--bg-color); }
     .nav-links a::after { display: none; }
-
-
-    /* 3. HERO (INÍCIO) */
-    section {
-        padding: 110px 0 60px; /* espaço para o header fixo */
-        min-height: auto; /* Altura automática para não cortar conteúdo */
-    }
-
-    #inicio { padding-top: 130px; }
-
-    .hero-wrapper {
-        flex-direction: column-reverse; /* Foto em cima, Texto embaixo */
-        text-align: center;
-        gap: 30px;
-        margin-top: 0; /* Remove espaço extra desnecessário */
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .hero-image img {
-        width: 200px;
-        height: 200px; /* Foto menor no celular */
-    }
-
-    /* 4. AJUSTES GERAIS */
-    .container { padding: 0 20px; }
-    .scroll-down { display: none; /* Esconde a setinha no mobile pois atrapalha */ }
+    
+    section { padding: 90px 0 50px; }
+    #inicio { padding-top: 110px; }
+    .hero-wrapper { flex-direction: column-reverse; text-align: center; gap: 30px; }
+    .hero-buttons { justify-content: center; width: 100%; }
+    .hero-image img { width: 180px; height: 180px; }
+    .scroll-down { display: none; }
 }
 
-/* Celulares pequenos */
+@media (max-width: 700px) {
+    .carousel-btn { display: none; }
+    .project-card { flex: 0 0 85%; }
+}
+
 @media (max-width: 480px) {
-    body {
-        font-size: 1.32rem;
-    }
-
+    body { font-size: 1rem; } /* Ajuste crítico para não estourar telas pequenas */
     .container { padding: 0 16px; }
-
     .logo { font-size: 1.1rem; }
-
-    #inicio { padding-top: 120px; }
-
-    .hero-content h1 { font-size: 1.9rem; }
-    .hero-content .subtitle { font-size: 1.2rem; }
-    .hero-content .hero-text { font-size: 1rem; }
-
-    .hero-image img { width: 160px; height: 160px; }
-
-    .hero-buttons { flex-direction: column; gap: 12px; }
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .project-card { padding: 22px; }
-
-    .contact-list li { font-size: 1.05rem; word-break: break-word; }
+    #inicio { padding-top: 100px; }
+    .hero-content h1 { font-size: 1.7rem; }
+    .hero-content .subtitle { font-size: 1.1rem; }
+    .hero-content .hero-text { font-size: 0.95rem; }
+    .hero-image img { width: 150px; height: 150px; }
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .project-card { flex: 0 0 100%; padding: 20px; }
+    .contact-list li { font-size: 0.95rem; }
 }
 
-/* Respeita usuários que preferem menos animação */
 @media (prefers-reduced-motion: reduce) {
     .hidden, .show, .nav-links, .theme-toggle, .btn, .project-card, a, .scroll-down {
         transition: none !important;
