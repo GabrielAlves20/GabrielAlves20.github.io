@@ -48,8 +48,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-main);
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 1.32rem;
+    line-height: 1.85;
     overflow-x: hidden; /* Evita rolagem lateral indesejada */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -58,9 +58,11 @@ a { text-decoration: none; color: var(--accent); transition: 0.3s; }
 a:hover { color: var(--accent-hover); }
 
 .container {
-    max-width: 1250px;
+    max-width: 1350px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+    min-width: 0;
 }
 
 /* --- HEADER FIXO (Para acompanhar o scroll se quiser, ou normal) --- */
@@ -156,7 +158,7 @@ nav {
 
 .nav-links a {
     margin-left: 30px;
-    font-size: 1.08rem;
+    font-size: 1rem;
     color: var(--text-primary);
     position: relative;
     padding-bottom: 5px;
@@ -178,18 +180,20 @@ nav {
 
 /* --- SEÇÕES (Full Screen) --- */
 section { 
-    min-height: 100vh;
+    position: relative;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 120px 0 80px;
+    scroll-margin-top: 120px; /* Ajuste para o header fixo */
 }
 
 /* Remove a borda do contato */
 #contato { border-bottom: none; }
 
 h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--text-primary); text-align: center; }
-.centered-section { text-align: center; max-width: 900px; }
+.centered-section { text-align: center; max-width: 1200px; }
 
 
 /* --- HERO --- */
@@ -204,7 +208,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 15px; color: var(--text-primary); }
 .hero-content .subtitle { font-size: 1.65rem; color: var(--accent); margin-bottom: 20px; font-weight: 600; }
 .hero-content .hero-text {
-    font-size: 1.18rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     margin-bottom: 30px;
     max-width: 700px;
@@ -228,7 +232,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     padding: 12px 30px;
     border-radius: 6px;
     font-weight: bold;
-    font-size: 1.05rem;
+    font-size: 1rem;
     transition: transform 0.2s;
 }
 .btn:hover { transform: translateY(-3px); background: #fff; }
@@ -245,18 +249,51 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     transform: translateY(-3px);
 }
 
+.github-link-wrapper { margin-top: 20px; }
 .github-link { font-weight: bold; display: inline-block; }
 
 
 /* --- SCROLL DOWN ARROW --- */
 .scroll-down {
-    position: absolute;
+    position: sticky;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(15, 23, 42, 0.75);
     color: var(--text-secondary);
-    animation: bounce 2s infinite; /* Animação infinita */
-    opacity: 0.7;
+    animation: bounce 2s infinite;
+    opacity: 0.85;
+    transition: transform 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+}
+
+.scroll-down:hover {
+    transform: translate(-50%, -5px);
+    background: rgba(56, 189, 248, 0.12);
+    opacity: 1;
+}
+
+.scroll-down svg {
+    width: 20px;
+    height: 20px;
+}
+
+[data-theme="light"] .scroll-down {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(3, 105, 161, 0.18);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .scroll-down:hover {
+    background: rgba(2, 132, 199, 0.16);
 }
 
 @keyframes bounce {
@@ -285,7 +322,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 .bio-text p {
     margin-bottom: 15px;
     color: var(--text-secondary);
-    font-size: 1.24rem;
+    font-size: 1rem;
     line-height: 1.85;
     text-align: justify;
 }
@@ -385,7 +422,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 
 @media (min-width: 1200px) {
     body {
-        font-size: 20px;
+        font-size: 1.32rem;
     }
 
     .logo {
@@ -393,7 +430,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     }
 
     .nav-links a {
-        font-size: 1.18rem;
+        font-size: 1.5rem;
     }
 
     .hero-content h1 {
@@ -438,7 +475,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 }
 
 .project-card {
-    flex: 0 0 min(320px, 100%);
+    flex: 0 0 calc((100% - 60px) / 3);
     background: var(--card-bg);
     padding: 30px;
     border-radius: 12px;
@@ -485,7 +522,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
 }
 .project-desc {
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -496,13 +533,13 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); margin-bottom: 40px; color: var(--te
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
 }
 .contact-list li {
     margin-bottom: 0;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
 }
-footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font-size: 0.9rem; }
+footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font-size: 1rem; }
 
 
 /* --- RESPONSIVIDADE --- */
@@ -595,7 +632,7 @@ footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font
 /* Celulares pequenos */
 @media (max-width: 480px) {
     body {
-        font-size: 16px;
+        font-size: 1.32rem;
     }
 
     .container { padding: 0 16px; }

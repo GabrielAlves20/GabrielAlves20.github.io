@@ -51,7 +51,7 @@
                     <a href="#inicio">Início</a>
                     <a href="#sobre">Sobre</a>
                     <a href="#projetos">Projetos</a>
-                    <a href="#contato and tech-stack">Contato</a>
+                    <a href="#contato">Contato</a>
                 </div>
             </nav>
         </div>
@@ -75,7 +75,7 @@
                         </a>
                     </div>
                     
-                    <div style="margin-top: px;">
+                    <div class="github-link-wrapper">
                         <a href="https://github.com/GabrielAlves20" target="_blank" class="github-link">Acessar meu GitHub &rarr;</a>
                     </div>
                 </div>
@@ -181,14 +181,14 @@
             </div>
         </div>
 
-        <a href="#contato and tech-stack" class="scroll-down">
+        <a href="#contato" class="scroll-down">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
             </svg>
         </a>
     </section>
     
-    <section id="contato and tech-stack">
+    <section id="contato">
             <div class="container centered-section hidden">
             <h2 class="stack-title">Minha Tech Stack</h2>
             <div class="stack-tags">
@@ -208,9 +208,7 @@
      
         <div class="container centered-section hidden">
             <h2>Vamos conversar?</h2>
-            <p class="contact-desc">
-                Estou disponível para novas oportunidades.
-            </p>
+
             <ul class="contact-list">
                 <li><a href="mailto:Gabriel12425@gmail.com">Gabriel12425@gmail.com</a></li>
                 <li><a href="https://www.linkedin.com/in/gabriel-alves-852264233/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -275,6 +273,18 @@
                 projectsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         }
+
+        document.querySelectorAll('.scroll-down').forEach((arrow) => {
+            arrow.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = arrow.getAttribute('href');
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
     </script>
 
 </body>
