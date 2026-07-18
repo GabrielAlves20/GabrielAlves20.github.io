@@ -179,7 +179,7 @@ nav {
 /* --- SEÇÕES --- */
 section { 
     position: relative;
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -482,7 +482,7 @@ footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font
     .nav-links a:hover { background-color: var(--accent); color: var(--bg-color); }
     .nav-links a::after { display: none; }
     
-    section { padding: 90px 0 50px; }
+    section { padding: 90px 0 50px; min-height: auto; }
     #inicio { padding-top: 110px; }
     .hero-wrapper { flex-direction: column-reverse; text-align: center; gap: 30px; }
     .hero-buttons { justify-content: center; width: 100%; }
